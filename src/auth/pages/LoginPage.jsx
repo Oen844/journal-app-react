@@ -17,13 +17,13 @@ export const LoginPage = () => {
 
       <Grid item
         className='box-shadow'
-        xs={3}
+        xs={7} xl={4}
         sx={{ backgroundColor: 'white', padding: 3, borderRadius: 2 }}>
         <Typography variant='h5' sx={{ mb: 1 }}>Login</Typography>
 
         <form>
           <Grid container>
-            <Grid item xs={12} sx={{ mt: 2 }}>
+            <Grid item xs={12} sx={{ mt: 6 }}>
               <TextField
                 label="Correo"
                 type="email"
