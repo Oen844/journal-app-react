@@ -2,6 +2,7 @@ import { MailOutline } from '@mui/icons-material'
 import { Typography } from '@mui/material'
 import React from 'react'
 import { JournalLayout } from '../layout/JournalLayout'
+import { NoteView } from '../view/NoteView'
 import { NothingSelectedView } from '../view/NothingSelectedView'
 
 export const JournalPage = () => {
@@ -11,7 +12,8 @@ export const JournalPage = () => {
 
       {/* <Typography>Adipisicing mollit aute laborum exercitation reprehenderit.</Typography> */}
 
-      <NothingSelectedView/>
+      {/* <NothingSelectedView/> */}
+      <NoteView/>
       
     </JournalLayout>
 
