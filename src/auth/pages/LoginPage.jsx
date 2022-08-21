@@ -6,7 +6,7 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useForm } from '../../hooks';
 import { AuthLayout } from '../layout/AuthLayout';
-import {chenkingAuthentication} from '../../store/auth/thunks';
+import {chenkingAuthentication, startGoogleSignIn} from '../../store/auth/thunks';
 
 export const LoginPage = () => {
 
@@ -27,7 +27,7 @@ export const LoginPage = () => {
 
   const onGoogleSignIn = () => {
     console.log('google sign in');
-    dispatch( chenkingAuthentication() );
+    dispatch( startGoogleSignIn() );
   }
 
 

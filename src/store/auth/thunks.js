@@ -7,3 +7,10 @@ export const chenkingAuthentication = () => {
         dispatch(checkingCredentials());
     }
 }
+
+export const startGoogleSignIn = () => {
+    return async (dispatch) => {
+
+        dispatch(checkingCredentials());
+    }
+}
