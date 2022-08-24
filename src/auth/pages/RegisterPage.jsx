@@ -27,23 +27,26 @@ export const RegisterPage = () => {
 
   const [formSubmitted, setFormSubmitted] = useState(false);
 
+  const { status, errorMessage } = useSelector(state => state.auth);
+  const isCheckingAuthentication = useMemo(() => status === 'checking', [status]);
+
   const {
     displayName, email, password, onInputChange, formState,
     isFormValid, displayNameValid, emailValid, passwordValid,
   } = useForm(formData, formValidations);
 
-  console.log(displayNameValid);
+
 
   const onSubmit = (event) => {
     event.preventDefault();
     setFormSubmitted(true);
 
-    if( !isFormValid ) return;
+    if (!isFormValid) return;
 
     dispatch(startCreatingUserWithEmailPassword(formState));
   }
 
-  console.log(isFormValid);
+
 
   return (
     <AuthLayout title='Crear cuenta'>
@@ -71,7 +74,7 @@ export const RegisterPage = () => {
               fullWidth
               name='email'
               value={email}
-              onChange={onInputChange }
+              onChange={onInputChange}
               error={!!emailValid && formSubmitted}
               helperText={emailValid}
 
@@ -92,8 +95,19 @@ export const RegisterPage = () => {
             />
           </Grid>
           <Grid container spacing={2} sx={{ mb: 2 }}>
+
+            <Grid
+              item xs={12}
+              sx={{ mt: 2 }}
+              sm={6}
+              display={!!errorMessage ? '': 'none'}
+            >
+              <Alert severity='error'>{errorMessage}</Alert>
+            </Grid>
+
             <Grid item xs={12} sx={{ mt: 2 }} sm={6}>
               <Button
+                disabled={ isCheckingAuthentication }
                 type='submit'
                 variant='contained'
                 fullWidth>
