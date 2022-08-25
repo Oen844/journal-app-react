@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Google } from '@mui/icons-material'
-import {Alert, Button, Grid, Link, TextField, Typography } from '@mui/material'
+import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material'
 import React, { useMemo } from 'react';
 
 import { Link as RouterLink } from 'react-router-dom';
@@ -12,7 +12,7 @@ export const LoginPage = () => {
 
   //const { status, errorMessage } = useSelector(state => state.auth);
   const { status, errorMessage } = useSelector(state => state.auth);
-  console.log(status, errorMessage);
+
 
   const dispatch = useDispatch();
 
@@ -23,9 +23,9 @@ export const LoginPage = () => {
 
   const isAuthenticating = useMemo(() => status === 'checking', [status]);
 
- 
-  
- 
+
+
+
   const onSubmit = (event) => {
     event.preventDefault();
     console.log('submit');
