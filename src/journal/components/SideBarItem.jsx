@@ -9,9 +9,6 @@ export const SideBarItem = ({ title='', body, id }) => {
              ? title.substring( 0 , 17 ) + '...'
              : title;
     }, [ title ]);
-    
-
-
 
     return (
         <ListItem disablePadding>
