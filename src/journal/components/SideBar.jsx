@@ -9,6 +9,9 @@ export const SideBar = ({ drawerWidth = 240 }) => {
     const { displayName } = useSelector(state => state.auth);
     const { notes } = useSelector(state => state.journal);
 
+
+
+
     return (
         <Box
             component='nav'
@@ -31,7 +34,9 @@ export const SideBar = ({ drawerWidth = 240 }) => {
                 <List>
                     {
                         notes.map(note => (
-                            <SideBarItem key={note.id} {...note} />
+                            <SideBarItem key={note.id} {...note}
+
+                            />
                         ))
                     }
                 </List>
