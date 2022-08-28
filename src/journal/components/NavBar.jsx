@@ -11,7 +11,7 @@ export const NavBar = ({ drawerWidth = 240 }) => {
     const { navaBar } = useSelector(state => state.journal);
 
     const onLogout = () => {
-        dispach(startLogout());
+        dispatch( startLogout() );
     }
     const showSlideBar = () => {
         if(navaBar == false) return dispatch(showNavBar());
