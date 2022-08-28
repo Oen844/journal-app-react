@@ -7,6 +7,7 @@ export const journalSlice = createSlice({
         messageSaved: '',
         notes: [],
         active: null,
+        navaBar: true,
         //    active: {
         //     id: 'ABC123',
         //     title: '',
@@ -63,6 +64,12 @@ export const journalSlice = createSlice({
             state.messageSaved = '';
             state.notes= [];
             state.active = null;
+        }, 
+        showNavBar : (state) => {
+            state.navaBar = !state.navBar;
+        },
+        deleteNavbar : (state) => {
+            state.navaBar = false;
         }
     }
 });
@@ -79,4 +86,6 @@ export const {
     savingNewNote,
     setPhotosToActiveNote,
     clearNotesLogout,
+    showNavBar,
+    deleteNavbar,
 } = journalSlice.actions;
