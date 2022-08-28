@@ -8,10 +8,13 @@ import { ImageGallery } from '../components'
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.css';
 
+
+
 export const NoteView = () => {
 
     const dispatch = useDispatch();
-    const { active: note, messageSaved, isSaving, notes } = useSelector(state => state.journal);
+    const { active: note, messageSaved, isSaving, notes, deleteNote } = useSelector(state => state.journal);
+
 
     const { body, title, date, onInputChange, formState } = useForm(note);
     const dateString = useMemo(() => {
@@ -20,6 +23,7 @@ export const NoteView = () => {
     }, [date]);
 
     const fileInputRef = useRef();
+
 
     useEffect(() => {
         dispatch(setActiveNote(formState))
@@ -33,6 +37,7 @@ export const NoteView = () => {
 
     
 
+
     const onSaveNote = () => {
         dispatch(startSaveNote());
     }
@@ -45,7 +50,7 @@ export const NoteView = () => {
     }
 
     const onDelte = () => {
-        dispatch( startDeletingNote() );
+        dispatch(startDeletingNote());
     }
 
 

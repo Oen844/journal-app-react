@@ -56,6 +56,7 @@ export const journalSlice = createSlice({
             
             state.active = null;
             state.notes = state.notes.filter( note => note.id !== action.payload );
+             
             
         },
         setPhotosToActiveNote: (state, action) => {

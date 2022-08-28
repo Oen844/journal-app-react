@@ -88,7 +88,7 @@ export const startDeletingNote = () => {
     return async ( dispatch, getState) => {
         const {uid} = getState().auth;
         const{active:note} = getState().journal;
-        console.log('delte thunks')
+        
         const docRef = doc( FirebaseDB, `${uid}/journal/notes/${note.id}`);
         await deleteDoc(docRef);
 
